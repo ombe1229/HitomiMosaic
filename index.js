@@ -23,7 +23,7 @@ setTimeout(function () {
     const containerList = galleryContent.querySelectorAll(".manga, .acg, .dj");
     containerList.forEach(function (element) {
         let tagContainer = element.querySelector(".relatedtags");
-        let tags = tagContainer.querySelectorAll("li").map(tag => tag.innerText);
+        let tags = [...tagContainer.querySelectorAll("li")].map(tag => tag.innerText);
 
         if (tags.some(tag => tagList.includes(tag))) {
             element.querySelector(".dj-img-cont").remove();
