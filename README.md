@@ -6,3 +6,4 @@
 
    - [ ] hidden-list-item
    - [ ] Config
+   - [ ] Mosaic
