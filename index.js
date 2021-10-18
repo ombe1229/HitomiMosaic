@@ -11,12 +11,9 @@
 setTimeout(() => {
 
     const tagList = [
-        "Scat ♂",
-        "Scat ♀",
-        "Guro ♂",
-        "Guro ♀",
-        "Amputee ♂",
-        "Amputee ♀",
+        "scat",
+        "guro",
+        "amputee",
     ];
 
     const galleryContent = document.querySelector(".gallery-content");
@@ -24,8 +21,8 @@ setTimeout(() => {
     containerList.forEach(function (element) {
         let tagContainer = element.querySelector(".relatedtags");
         let tags = [...tagContainer.querySelectorAll("li")].map(tag => tag.innerText);
-        if (tags.some(tag => tagList.includes(tag))) {
+        if (tags.some(tag => tagList.includes(tag.toLowerCase().replace(/\s(♀|♂)/g, "")))) {
             element.querySelector(".dj-img-cont").remove();
         }
     });
-}, 500);
+}, 1000);
