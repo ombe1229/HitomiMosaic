@@ -8,7 +8,7 @@
 // @run-at      document-end
 // ==/UserScript==
 
-setTimeout(function () {
+setTimeout(() => {
 
     const tagList = [
         "Scat ♂",
@@ -24,9 +24,8 @@ setTimeout(function () {
     containerList.forEach(function (element) {
         let tagContainer = element.querySelector(".relatedtags");
         let tags = [...tagContainer.querySelectorAll("li")].map(tag => tag.innerText);
-
         if (tags.some(tag => tagList.includes(tag))) {
             element.querySelector(".dj-img-cont").remove();
         }
     });
-}, 1000)();
+}, 500);
