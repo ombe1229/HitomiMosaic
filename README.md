@@ -5,5 +5,5 @@
  ## Todo
 
    - [ ] hidden-list-item
-   - [ ] Config
+   - [ ] [Config](https://github.com/odyniec/MonkeyConfig)
    - [ ] Mosaic
