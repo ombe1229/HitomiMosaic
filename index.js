@@ -14,6 +14,14 @@ setTimeout(() => {
         "scat",
         "guro",
         "amputee",
+        "snuff",
+        "birth",
+        "males only",
+        "yaoi",
+        "dog",
+        "pig",
+        "insect",
+        "toddler",
     ];
 
     const galleryContent = document.querySelector(".gallery-content");
