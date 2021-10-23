@@ -3,7 +3,7 @@
 // @namespace   HitomiMosaic
 // @match       *://hitomi.la/*
 // @exclude     *://hitomi.la/reader/*
-// @version     1.0.0
+// @version     1.1.0
 // @author      ombe1229
 // @description Hitomi thumbnail mosaic
 // @run-at      document-end
