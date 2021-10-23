@@ -27,7 +27,7 @@ const tagList = [
 
 function mosaic(changes, observer) {
     let containerList;
-    if ((containerList = document.querySelectorAll("div.gallery-content > .manga, .acg, .dj")).length > 0) {
+    if ((containerList = document.querySelectorAll("div.gallery-content > .manga, .acg, .dj, .cg")).length > 0) {
         observer.disconnect();
 
         containerList.forEach(function (element) {
