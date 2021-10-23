@@ -26,10 +26,10 @@ const tagList = [
 (new MutationObserver(mosaic).observe(document, { childList: true, subtree: true }));
 
 function mosaic(changes, observer) {
-    if (document.querySelector("div.gallery-content > div")) {
+    let containerList;
+    if ((containerList = document.querySelectorAll("div.gallery-content > .manga, .acg, .dj")).length > 0) {
         observer.disconnect();
 
-        containerList = document.querySelectorAll(".manga, .acg, .dj")
         containerList.forEach(function (element) {
             let tagContainer = element.querySelector(".relatedtags");
             let tags = [...tagContainer.querySelectorAll("li")].map(tag => tag.innerText);
