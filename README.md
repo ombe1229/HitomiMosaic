@@ -4,5 +4,5 @@
 
  ## Todo
 
-   - [ ] [Config](https://github.com/odyniec/MonkeyConfig)
+   - [x] [Config](https://github.com/sizzlemctwizzle/GM_config)
    - [ ] Mosaic
