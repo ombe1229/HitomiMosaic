@@ -1,8 +1,7 @@
 # HitomiMosaic
 
- > fcuk
+ > Mosaic
 
- ## Todo
+## Violentmonkey
 
-   - [x] [Config](https://github.com/sizzlemctwizzle/GM_config)
-   - [ ] Mosaic
+[Here](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag)
