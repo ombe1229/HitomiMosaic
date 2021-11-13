@@ -14,8 +14,28 @@
 // ==/UserScript==
 
 
-GM_config.init(
-    {
+(new MutationObserver(mosaic).observe(document, { childList: true, subtree: true }));
+
+
+function mosaic(changes, observer) {
+    let containerList;
+    if ((containerList = document.querySelectorAll("div.gallery-content > .manga, .acg, .dj, .cg")).length > 0) {
+        observer.disconnect();
+
+        initGmConfig();
+        let tagList = GM_config.get("tagList").split(/,\s+|,/)
+        containerList.forEach(function (element) {
+            let tagContainer = element.querySelector(".relatedtags");
+            let tags = [...tagContainer.querySelectorAll("li")].map(tag => tag.innerText);
+            if (tags.some(tag => tagList.includes(tag.toLowerCase().replace(/\s(♀|♂)/g, "")))) {
+                element.querySelector(".dj-img-cont").remove();
+            }
+        });
+    }
+};
+
+function initGmConfig() {
+    GM_config.init({
         "id": "HitomiMosaicConfig",
         "title": "Hitomi Mosaic Config",
         "fields":
@@ -29,9 +49,11 @@ GM_config.init(
         },
     });
 
-const configNode = document.createElement("div");
-configNode.innerHTML = "<button id='configBtn' type='button'>HitomiMosaic Config</button>";
-document.body.appendChild(configNode);
+    const configNode = document.createElement("div");
+    configNode.innerHTML = "<button id='configBtn' type='button'>HitomiMosaic Config</button>";
+    document.body.appendChild(configNode);
+}
+
 
 document.getElementById("configBtn").addEventListener(
     "click", () => {
@@ -39,23 +61,6 @@ document.getElementById("configBtn").addEventListener(
     }, false
 );
 
-(new MutationObserver(mosaic).observe(document, { childList: true, subtree: true }));
-
-function mosaic(changes, observer) {
-    let containerList;
-    if ((containerList = document.querySelectorAll("div.gallery-content > .manga, .acg, .dj, .cg")).length > 0) {
-        observer.disconnect();
-
-        let tagList = GM_config.get("tagList").split(/,\s+|,/)
-        containerList.forEach(function (element) {
-            let tagContainer = element.querySelector(".relatedtags");
-            let tags = [...tagContainer.querySelectorAll("li")].map(tag => tag.innerText);
-            if (tags.some(tag => tagList.includes(tag.toLowerCase().replace(/\s(♀|♂)/g, "")))) {
-                element.querySelector(".dj-img-cont").remove();
-            }
-        });
-    }
-};
 
 GM_addStyle(`
     #configBtn {
