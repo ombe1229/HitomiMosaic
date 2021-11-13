@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 
+initConfigBtn();
 (new MutationObserver(mosaic).observe(document, { childList: true, subtree: true }));
 
 
@@ -22,7 +23,6 @@ function mosaic(changes, observer) {
     if ((containerList = document.querySelectorAll("div.gallery-content > .manga, .acg, .dj, .cg")).length > 0) {
         observer.disconnect();
 
-        initGmConfig();
         let tagList = GM_config.get("tagList").split(/,\s+|,/)
         containerList.forEach(function (element) {
             let tagContainer = element.querySelector(".relatedtags");
@@ -34,7 +34,7 @@ function mosaic(changes, observer) {
     }
 };
 
-function initGmConfig() {
+function initConfigBtn() {
     GM_config.init({
         "id": "HitomiMosaicConfig",
         "title": "Hitomi Mosaic Config",
