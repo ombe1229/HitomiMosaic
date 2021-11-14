@@ -1,6 +1,6 @@
 # HitomiMosaic
 
- > Mosaic
+ > Hitomi thumbnail mosaic userscript
 
 ## Violentmonkey
 
