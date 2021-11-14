@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name        HitomiMosaic
 // @namespace   HitomiMosaic
+// @license     Apache 2.0
 // @match       *://hitomi.la/*
 // @exclude     *://hitomi.la/reader/*
 // @version     1.1.0
